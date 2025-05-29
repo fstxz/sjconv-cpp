@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
 	if (client == NULL) {
 		std::cerr << "jack_client_open() failed, status: " << status << std::endl;
 		if (status & JackServerFailed) {
-			std::cerr << "Unable to connect to JACK server\n" << std::endl;
+			std::cerr << "Unable to connect to JACK server" << std::endl;
 		}
 		return 1;
 	}
@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
 		auto out_port = jack_port_register (client, ("output." + std::to_string(i+1)).data(), JACK_DEFAULT_AUDIO_TYPE, JackPortIsOutput, 0);
 
         if ((in_port == NULL) || (out_port == NULL)) {
-            std::cerr << "no more JACK ports available\n" << std::endl;
+            std::cerr << "no more JACK ports available" << std::endl;
             return 1;
         }
 
