@@ -79,7 +79,6 @@ int main(int argc, char *argv[]) {
                   << " Expected: " << sfinfo.frames << std::endl;
     }
 
-    // Close the file
     sf_close(sndfile);
 
     if (sfinfo.channels != 1) {
