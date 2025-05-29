@@ -140,6 +140,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
+	std::cout << "Started" << std::endl;
 	std::this_thread::sleep_for(std::chrono::high_resolution_clock::duration::max());
 
 	jack_client_close (client);
