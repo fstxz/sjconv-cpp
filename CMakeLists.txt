@@ -5,6 +5,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(sjconv-cpp)
 
+if(MSVC)
+  add_compile_options(/W4 /WX)
+else()
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 add_executable(sjconv-cpp src/main.cpp)
 target_include_directories(sjconv-cpp PRIVATE thirdparty)
 
