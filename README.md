@@ -30,9 +30,8 @@ On Debian-based systems, you can install these with `apt install cmake libjack-j
 ```sh
 git clone https://github.com/fstxz/sjconv-cpp.git
 cd sjconv-cpp
-mkdir build && cd build
-cmake ..
-cmake --build .
+cmake -B build
+cmake --build build
 ```
 
 The `sjconv-cpp` binary will be placed in the `build` directory.
