@@ -16,7 +16,8 @@ std::vector<jack_port_t *> output_ports;
 std::vector<float> ir;
 std::vector<FFTConvolver *> convolvers;
 
-int process(jack_nframes_t nframes, void *_) {
+int process(jack_nframes_t nframes, void *arg) {
+    (void)arg;
     for (unsigned int i = 0; i < input_ports.size(); i++) {
         auto in = (jack_default_audio_sample_t *)jack_port_get_buffer(
             input_ports[i], nframes);
@@ -28,7 +29,10 @@ int process(jack_nframes_t nframes, void *_) {
     return 0;
 }
 
-void jack_shutdown(void *_) { exit(1); }
+void jack_shutdown(void *arg) {
+    (void)arg;
+    exit(1);
+}
 
 int main(int argc, char *argv[]) {
     argparse::ArgumentParser program("sjconv-cpp", "0.1.0");
