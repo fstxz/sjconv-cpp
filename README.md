@@ -28,7 +28,7 @@ Build dependencies:
 On Debian-based systems, you can install these with `apt install cmake libjack-jackd2-dev libsndfile1-dev`
 
 ```sh
-git clone https://github.com/fstxz/sjconv-cpp.git
+git clone --recursive https://github.com/fstxz/sjconv-cpp.git
 cd sjconv-cpp
 cmake -B build
 cmake --build build
